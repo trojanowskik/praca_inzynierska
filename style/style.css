@@ -1,0 +1,281 @@
+body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+    background: #d3e0f5;
+}
+
+.pierwsza{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.pierwsza #tytul{
+    margin: 0%;
+    height: 5%;
+    width: 100%;
+}
+
+.pierwsza #tytul h1{
+  text-align: center;
+}
+
+.pierwsza img{
+    margin: 0%;
+    padding: 0%;
+    height: 95%;
+    width: 100%;
+}
+
+.mapa{
+    margin: 0%;
+    padding: 0%;
+    height: 100%;
+    width: 100%;
+}
+
+.mapa #img1{
+    float:left;
+    margin: 0%;
+    padding: 0%;
+    width: 20%;
+    height: 20%;
+}
+
+.mapa #img1 button{
+    width: 100%;
+    height: 100%;
+}
+
+.mapa div img{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.mapa #map{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 80%;
+}
+
+.text{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+.text #tekst{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 78%;
+}
+
+.text #stopka{
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 20%;
+}
+
+#map {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+}
+
+p, h2, ol, li{
+    list-style-type: none;
+}
+
+hr{
+    border-top: 1px solid black;
+}
+  
+.arrow{
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.arrow span{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border-bottom: 5px solid #06A8FF;
+    border-right: 5px solid #06A8FF;
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+.arrow span:nth-child(2){
+    animation-delay: -0.2s;
+}
+.arrow span:nth-child(3){
+    animation-delay: -0.4s;
+}
+@keyframes animate {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+.text #tekst{
+    font-size: larger;
+}
+
+/*style do zakladek z wydarzeniami*/
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  .tab button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab button.active {
+    background-color: #ccc;
+  }
+  
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+  }
+
+  /*style do zakladek z atrakcjami*/
+  
+  .tab2 {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  
+  .tab2 button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  
+  .tab2 button:hover {
+    background-color: #ddd;
+  }
+  
+  .tab2 button.active {
+    background-color: #ccc;
+  }
+  
+  .tabcontent2 {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+  }
+
+  .historia #img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+
+  .historia{
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+    background-color: white;
+  }
+
+  div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 180px;
+    height: 225px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+  }
+
+  div.gallery2 {
+    margin: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 245px;
+    height: 225px;
+  }
+  
+  div.gallery2:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery2 img {
+    width: 100%;
+    height: 100%;
+  }
+
+  div.gallery3 {
+    margin: 5px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    width: 300px;
+    height: 225px;
+  }
+  
+  div.gallery3:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery3 img {
+    width: 100%;
+    height: 100%;
+  }
