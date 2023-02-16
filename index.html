@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Gmina Wojciechów - interaktywna mapa historyczno turystyczna</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="https://js.arcgis.com/4.22/esri/themes/light/main.css">
+    <script src="https://js.arcgis.com/4.22/"></script>
+</head>
+<body>
+
+    <div class=pierwsza>
+        <div id="tytul"><h1>Gmina Wojciechów - interaktywna mapa historyczno turystyczna</h1></div>
+        
+        <img src=./img/poczatkowa.jpg>
+
+        <div class="arrow" id="strzalka">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+    </div>
+
+    <div class="mapa">
+
+        <div id="img1">
+            <button id="btn1"><img src=./img/wieza_btn.jpg></button>
+        </div>
+    
+        <div id="img1">
+            <button id="btn2"><img src=./img/kosciol_btn.jpg></button>
+            
+        </div>
+    
+        <div id="img1">
+            <button id="btn3"><img src=./img/kuznia_btn.jpg></button>
+        </div>
+    
+        <div id="img1">
+            <button id="btn4"><img src=./img/zoo_btn.jpg></button>
+        </div>
+    
+        <div id="img1">
+            <button id="btn5"><img src=./img/mlyn_btn.jpg></button>
+        </div>
+    
+        
+
+        <div id="map"></div>
+        
+
+    </div>
+        
+    <br>
+
+    <div class="text">
+
+        <div class="historia">
+            
+            <h3>Historia Wojciechowa</h3>
+
+            <p id="hist_woj">
+                <p>Prace archeologiczne przeprowadzone na terenie gminy pozwoliły na jednoznaczne określenie dziejów Wojciechowa i najważniejszych jego zabytków. Odnalezione relikty
+                wskazują na osadnictwo już w VIII wieku. Źródła kościelne odnotowują nazwę „Woycechow” w 1328 roku. W połowie XIV wieku rozpoczęto budowę fortyfikacji obronnych,
+                otaczając je zachowaną do dziś, suchą fosą. Fortalicjum z solidną murowaną budowlą na majdanie wyróżniało się w krajobrazie ziemi lubelskiej, gdzie przeważała zabudowa
+                drewniana. Owa warownia wojciechowska miała dla panującego monarchy znaczenie strategiczne – leżała bowiem na trakcie z Krakowa przez Urzędów, Bełżyce, Wojciechów,
+                Kock na Łuków i dalej na Litwę.</p>
+
+                <p>Pierwszym, znanym ze źródeł historycznych właścicielem Wojciechowa był kasztelan lubelski, Jan ze Szczekockich herbu Odrowąż, a następnie jego syn starosta lubelski
+                również Jan. W 1481 roku Wojciechów otrzymała córka Jana, Zofia poślubiona wojewodzie ruskiemu – Janowi z Pilczy herbu Leliwa. To właśnie Pileccy byli fundatorami wieży
+                mieszkalnej, zwanej obecnie „Ariańską”. W 1534 roku oddali oni Wojciechów w arendę Firlejom herbu Lewart, a następnie Spinkom herbu Prus, ostatecznie sprzedając
+                posiadłość Stanisławowi Spince w 1580 roku. On, jeszcze jako dzierżawca wieży, udzielił w niej schronienia znanemu w Rzeczypospolitej pastorowi i kaznodziei
+                kalwińskiemu Marcinowi Krowickiemu. Dla wyznawców nowej wiary przeznaczona została jej trzecia, reprezentacyjna kondygnacja. Autorytet, jakim cieszył się Krowicki
+                wśród zwolenników reformacji, sprawił, że izba w wojciechowskiej wieży stała się „jedną z najdostojniejszych trybun i najdonioślejszych kazalnic świata”
+                (jak pisał S. Żeromski w powieści „Nawracanie Judasza”). Miejscowa ludność przebywających w wieży kalwinów nazywała „arianami”, dlatego do wieży przylgnęła nazwa „Ariańska”.</p>
+
+                <p>W 1599 roku Wojciechów przeszedł na własność podkomorzego chełmskiego, Pawła Orzechowskiego herbu Rogala. Jeden z jego potomków – Teodor ufundował w 1725 roku istniejący
+                do dziś, późnobarokowy kościół drewniany. W 1778 roku Orzechowscy sprzedali Wojciechów. Kolejnymi jego właścicielami byli: Morscy, Ostrowscy, Grodziccy, Świeżawscy i Popławscy.</p>
+
+                <p>W 1910 roku Natalia i Józef Popławscy przekazali zniszczoną wieżę Towarzystwu Opieki nad Zabytkami Przeszłości, które już w 1911 roku przystąpiło do jej odbudowy. Prace kierowane
+                przez Jana Koszczyc – Witkiewicza przerwała wojna. Powtórną próbę odbudowy spotkał ten sam los w 1939 roku. Dopiero w 1972 ponownie przystąpiono do gruntownego remontu. Tym razem 
+                udało się to bez przeszkód i po trzech latach swoją siedzibę znalazł tu, działający do dzisiaj, Gminny Ośrodek Kultury. W 1993 r. strych wieży Ariańskiej Został zaadoptowany na 
+                Muzeum Kowalstwa. Od 2005 r. trzecią jej kondygnację zajmuje Wojciechowskie Muzeum Regionalne, a w najpiękniejszej niegdyś sali reprezentacyjnej mieści się obecnie Gminna 
+                Biblioteka Publiczna. Sala na najniższym piętrze jest wykorzystywana jako sala konferencyjna, miejsce Sesji Rady Gminy Wojciechów, miejsce spotkań Klubu Seniora oraz zajęć 
+                tanecznych i wokalno – instrumentalnych.</p>
+            </p>
+
+            <img id="img" src="./img/herby.jpg">
+
+        </div>
+
+        <br>
+
+        <!-- zakładki do atrakcji -->
+
+        <div class="tab2">
+            <button class="tablinks2" onclick="openCity2(event, 'wieza')">Wieża Ariańska</button>
+            <button class="tablinks2" onclick="openCity2(event, 'kosciol')">Kościół zabytowy</button>
+            <button class="tablinks2" onclick="openCity2(event, 'kuznia')">Kuźnia</button>
+            <button class="tablinks2" onclick="openCity2(event, 'zoo')">ZOO Wojciechów</button>
+            <button class="tablinks2" onclick="openCity2(event, 'mlyn')">Młyn Hipolit</button>
+        </div>
+
+        <div id="wieza" class="tabcontent2">
+            <h3>Wieża Ariańska</h3>
+            <button id="btn_wieza">Pokaż na mapie</button>
+            <p>
+                Trójkondygnacyjna, wybudowana z kamieni i cegieł, wieża wzniesiona w dwóch etapach przed 1527 r. przez starostę lubelskiego Jana Pileckiego. Pilecki po zniszczeniu
+                wcześniejszych umocnień, odbudował je w zmodernizowanej formie i przystosował do broni palnej. Umocnienia otrzymały wówczas kształt czworoboku z wyprofilowanymi trzema
+                bastionikami o zarysie trapezu, a w miejscu czwartego posadowiono wieżowy dwór z zewnętrzną klatką schodową. Wieża miała charakter zarówno obronny, jak i rezydencjonalny.
+
+                Prawdopodobnie w pierwszej połowie XVI wieku cały dawny folwark otoczono murem ze strzelnicami, by wzmocnić walory obronne założenia. Pozostałości muru zachowały się w
+                pobliżu wieży oraz w ścianie budynku gospodarczego znajdującej się na terenie gospodarstwa usytuowanego przy siedzibie Urzędu Gminy. Po wybudowaniu nowego dworu
+                opuszczona wieża powoli niszczała, odrestaurowana w 1907 roku według projektu Jana Koszczyca Witkiewicza. Ponownie gruntownie remontowana i rekonstruowana w latach 
+                1971-1974 według projektu Tadeusza Augustynka. Obecnie w Wieży Ariańskiej mieści się Gminny Ośrodek Kultury, Muzeum Regionalne, Muzeum Kowalstwa, Biblioteka Gminna oraz
+                Punkt Informacji Agroturystycznej.
+            </p>
+            
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/DSC07906.JPG">
+                  <img src="./img/wieza/DSC07906.JPG" alt="Wieża" width="200" height="300">
+                </a>
+                <div class="desc">Widok wieży z boiska przy szkole</div>
+            </div>
+              
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/wieza_1930.png">
+                  <img src="./img/wieza/wieza_1930.png" alt="Wieża 1930" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie wieży z 1930r.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/wieza_1957.png">
+                  <img src="./img/wieza/wieza_1957.png" alt="Wieża 1957" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie wieży z 1957r.</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/Nowy-h.jpg">
+                  <img src="./img/wieza/Nowy-h.jpg" alt="Wieża - dzisiejsze boisko" width="200" height="300">
+                </a>
+                <div class="desc">Widok wieży od strony boiska</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/Wieza_arianska_Wojciechow.jpg">
+                  <img src="./img/wieza/Wieza_arianska_Wojciechow.jpg" alt="Rycina wieży" width="200" height="300">
+                </a>
+                <div class="desc">Rycina wieży - autor i rok nieznany</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/FOT_255_I_0001.jpg">
+                  <img src="./img/wieza/FOT_255_I_0001.jpg" alt="Wieża" width="200" height="300">
+                </a>
+                <div class="desc">Wieża - rok powstania nieznany</div>
+            </div>
+
+            <div class="gallery">
+                <a target="_blank" href="./img/wieza/Nowy-g.jpg">
+                  <img src="./img/wieza/Nowy-g.jpg" alt="Mury obok wieży" width="200" height="300">
+                </a>
+                <div class="desc">Mury obronne obok wieży</div>
+            </div>
+
+        </div>
+        
+        <div id="kosciol" class="tabcontent2">
+            <h3>Kościół zabytowy</h3>
+            <button id="btn_kosciol">Pokaż na mapie</button>
+            <p>
+                Późnobarokowy, drewniany kościół pod wezwaniem św. Teodora wybudowany został w 1725 r. Jego fundatorem był Teodor Orzechowski – ówczesny właściciel wsi. W 1802 roku, kolejna
+                właścicielka Wojciechowa o nazwisku Morska otoczyła kościół wspaniałym murowanym parkanem.
+                Wnętrze kościoła wykonano w stylu późnobarokowym. W drewnianym, barokowym ołtarzu głównym umieszczony jest obraz Matki Boskiej Nieustającej Pomocy z 1836 r. Ołtarze zdobią bezcenne
+                kurdybany - skóry o bogatym ornamencie tłoczonym, malowane i złocone.
+ 
+                Na cmentarzu kościelnym znajduje się drewniana, czworoboczna dzwonnica wzniesiona jednocześnie z kościołem oraz nagrobek Felicjany z Fredrów Grodzickiej z 1852 r. i płyta
+                nagrobna Stanisława Spinka herbu Prus z XVI w.
+ 
+                Na wschód od kościoła znajduje się cmentarz grzebalny założony w 1846 r. połączony ze świątynią wspaniałą aleją kasztanową. Na jego terenie znajduje się wiele starych,
+                cennych nagrobków, z których na szczególną uwagę zasługuje kaplica grobowa Świeżawskich oraz grobowce rodziny Dąbrowskich i Felicjana Grodzickiego.
+            </p>
+            
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/kosciol_dzis.jpg">
+                  <img src="./img/kosciol/kosciol_dzis.jpg" alt="Kościół" width="200" height="300">
+                </a>
+                <div class="desc">Widok kościoła od strony wejścia od wikariówki</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/kosciol.png">
+                  <img src="./img/kosciol/kosciol.png" alt="Rycina kościoła" width="200" height="300">
+                </a>
+                <div class="desc">Rycina kościoła autorstwa Wł.Zielińskiego</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/kosciol_1966.png">
+                  <img src="./img/kosciol/kosciol_1966.png" alt="Kościół 1966" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie kościoła z 1966r. - widok od frontu</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/kosciol_1966_2.png">
+                  <img src="./img/kosciol/kosciol_1966_2.png" alt="Kościół 1966" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie kościoła z 1966r. - widok zza parkanu</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/dzwonnica_1957_2.png">
+                  <img src="./img/kosciol/dzwonnica_1957_2.png" alt="Dzwonnica 1957" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie dzwonnicy z 1957r. - widok od ulicy</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/dzwonnica_1992_1.png">
+                  <img src="./img/kosciol/dzwonnica_1992_1.png" alt="Dzwonnica 1992" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie dzwonnicy z 1992r. - widok od ulicy</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kosciol/wnetrze_1966.png">
+                  <img src="./img/kosciol/wnetrze_1966.png" alt="Wnętrze kościoła 1966" width="200" height="300">
+                </a>
+                <div class="desc">Zdjęcie wnętrza kościoła z 1992r.</div>
+            </div>
+
+        </div>
+
+        <div id="kuznia" class="tabcontent2">
+            <h3>Kuźnia</h3>
+            <button id="btn_kuznia">Pokaż na mapie</button>
+            <p>
+                Kuźnia w Wojciechowie istnieje i funkcjonuje nieprzerwanie od 1920 roku. Założona przez Michała Ostrowskiego, który pracował w niej od 1920 do 1971 roku. Nauczył fachu swojego syna
+                - Józefa Czernieca, który pracował w niej od 1952 roku do 1992 roku. Obecnie pracuje w niej syn Józefa - Roman Czerniec, który zaczął prace w wieku 16 lat tj. w 1971 r. Dawniej prace
+                w kuźni były ściśle związane z wykonywaniem usług dla rolnictwa i polegała na: podkuwaniu koni, klepaniu siekier, lemieszy, reperacji pługów i narzędzi rolniczych.
+                Jednak upływ czasu, sprawił że z roku na rok koni w Polsce zdecydowanie ubyło, zastąpiono je maszynami. Aktualny właściciel - Roman Czerniec żeby utrzymać siebie, swoją rodzinę i nie dopuścić
+                do upadku zakładu, a jednocześnie móc dalej rozwijać swoją pasję - przestawił się na kowalstwo artystyczne, które wykonuje od 25 lat. Jego wyroby mają indywidualne, niepowtarzalne wzory, gdyż wykuwane
+                są za pomocą rąk, młota i kowadła. Tworzone są unikatowe dzieła, tj. balustrady, bramy ogrodzenia, meble, schody i drzwi metalowe oraz inne wyroby o bardzo ciekawych wzorach.
+            </p>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kuznia/DSC01718.JPG">
+                  <img src="./img/kuznia/DSC01718.JPG" alt="Kuźnia" width="200" height="300">
+                </a>
+                <div class="desc">Aktualny wygląd kuźni w Wojciechowie</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/kuznia/historia.jpg">
+                  <img src="./img/kuznia/historia.jpg" alt="Historia" width="200" height="300">
+                </a>
+                <div class="desc">Historia kuźni przedstawiona na grafice</div>
+            </div>
+
+        </div>
+
+        <div id="zoo" class="tabcontent2">
+            <h3>ZOO Wojciechów</h3>
+            <button id="btn_zoo">Pokaż na mapie</button>
+            <p>
+                Zoo Wojciechów to miejsce utworzone w 2011 roku. Kilka hektarów pola z niszczejącym gospodarstwem rolnym od tamtego momentu zaczęło zmieniać swoje oblicze
+                i powoli dążyć do bycia ogrodem zoologicznym.
+
+                Pierwszymi mieszkańcami zostały głównie zwierzęta gospodarskie takie jak osły, kozy czy tez krowy. Przełomowym dla kolekcji momentem było pojawienie się
+                lwicy o imieniu Ela, którą uważa się za pierwszy „egzotyczny okaz”, kojarzący się z prawdziwym zoo. Po niedługim czasie do Eli dołączył biały lew - Tabo,
+                który jest mieszkańcem ZOO od 2013 roku. Rzadko spotkany okaz przyciągnął wiele turystów co przełożyło się na powiększenie kolekcji.
+
+                Pierwszymi małpami w zoo były makaki japońskie, potem pojawiły się koczkodany rude, czy gatunki z rodziny lemurowatych - znane i lubiane lemury katta.
+
+                W 2014 o zoo zrobiło się głośniej za sprawą lwa wykarmionego przez psią mamę. Wspomniana wcześniej Ela nie okazała się dobrą matką, jednakże
+                psia zastępczyni stanęła na wysokości zadania, a małe lwiątko wyrosło na prawdziwego lwa.
+
+                Kolejnym ważnym punktem w historii był rok 2020, który przyniósł wiele zmian. Wyremontowane zostały woliery, powiększono przestrzenie wielu
+                wybiegów oraz zmodernizowano zaplecze zoo.
+
+                W efekcie na 10 lecie istnienia w 2021 roku ZOO udało się uzyskać status ogrodu zoologicznego nadany przez Generalną Dyrekcję Ochrony Środowiska.
+                Obecnie na obszarze 4 hektarów mieszka ponad 50 gatunków zwierząt z 6 kontynentów.
+
+            </p>
+
+            <div class="gallery3">
+                <a target="_blank" href="./img/zoo_btn.jpg">
+                  <img src="./img/zoo_btn.jpg" alt="Zoo" width="200" height="300">
+                </a>
+                <div class="desc">Biały lew, który stał sie symbolem ZOO</div>
+            </div>
+
+            <div class="gallery3">
+                <a target="_blank" href="./img/zoo/lewjpg.jpg">
+                  <img src="./img/zoo/lewjpg.jpg" alt="Lew" width="200" height="300">
+                </a>
+                <div class="desc">Biały lew, który stał sie symbolem ZOO</div>
+            </div>
+
+        </div>
+
+        <div id="mlyn" class="tabcontent2">
+            <h3>Młyn Hipolit</h3>
+            <button id="btn_mlyn">Pokaż na mapie</button>
+            <p>
+                Młyn „Hipolit" zbudowano w 1937 r. Jest częścią "Szlaku młynów wodnych rzeki Bystrej" oraz "Szlaku żelaza i kowalskich tradycji ". Młyn i muzeum uznane zostały
+                za jedną z „Perełek Lubelszczyzny". Położony w przepięknym zakolu rzeki, przy pieszym i rowerowym szlaku turystycznym Lublin - Wojciechów - Nałęczów - Kazimierz Dolny.
+                Jesteśmy członkiem lokalnej organizacji turystycznej „Kraina Lessowych Wąwozów”.
+
+                Minerały, rośliny, edukacja i tradycja czyli pasje właścicieli, stały się ich pracą i stylem życia. Dlatego podczas warsztatów i wycieczek z zapałem dzielą
+                się swoją wiedzą i umiejętnościami.
+            </p>
+
+            <div class="gallery3">
+                <a target="_blank" href="./img/hipolit/Hipolit.jpg">
+                  <img src="./img/hipolit/Hipolit.jpg" alt="Młyn Hipolit" width="200" height="300">
+                </a>
+                <div class="desc">Młyn Hipolit</div>
+            </div>
+
+            <div class="gallery3">
+                <a target="_blank" href="./img/mlyn_btn.jpg">
+                  <img src="./img/mlyn_btn.jpg" alt="Młyn" width="200" height="300">
+                </a>
+                <div class="desc">Młyn Hipolit</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/hipolit/wulkan.jpg">
+                  <img src="./img/hipolit/wulkan.jpg" alt="Wulkan" width="200" height="300">
+                </a>
+                <div class="desc">Prezentacja erupcji wulkanu</div>
+            </div>
+
+            <div class="gallery2">
+                <a target="_blank" href="./img/hipolit/zloto1.jpg">
+                  <img src="./img/hipolit/zloto1.jpg" alt="Płukanie złota" width="200" height="300">
+                </a>
+                <div class="desc">Płukanie złota</div>
+            </div>
+
+        </div>
+
+        <br>
+
+        <!-- zakładki do okupacji -->
+
+        <div class="tab">
+            <button class="tablinks" onclick="openCity(event, 'szczuczki')">Masowy mord W Szczuczkach</button>
+            <button class="tablinks" onclick="openCity(event, 'wojciechow')">Masakra Żydów w Wojciechowie</button>
+            <button class="tablinks" onclick="openCity(event, 'palikije')">Pacyfikacja wsi Palikije II</button>
+            <button class="tablinks" onclick="openCity(event, 'wojciechow_kol')">Mord w Wojciechowie Kolonia 5</button>
+            <button class="tablinks" onclick="openCity(event, 'tygrys')">Zabójstwo "Tygrysa"</button>
+            <button class="tablinks" onclick="openCity(event, 'posterunek')">Likwidacja posterunku żandarmerii</button>
+            <button class="tablinks" onclick="openCity(event, 'rekwizycja')">Karna rekwizycja w Wojciechowie</button>
+        </div>
+        
+        <div id="szczuczki" class="tabcontent">
+            <h3>Masowy mord W Szczuczkach</h3>
+            <button id="btn_szczuczki">Pokaż na mapie</button>
+            <p><p>Był to pierwszy masowy mord na Lubelszczyźnie. Doszło do niego 1 października 1939r. ale swój początek miało już 29 września 1939r. tego dnia do Szczuczek
+                przyjechało wojsko polskie. Różne źródła donoszą, że byli to żołnierze, którzy napadli na Niemców z Chodla do Lublina - wersja ta oparta jest na zeznaniach
+                Władysława Eksterowicza - jeden z żołnierzy, którzy rozbrajali się w Szczuczkach. Żołnierze przedzierali się w stronę walczącej Warszawy i we wsi mieli zatrzymać
+                się tylko na jedną noc. W nocy z 29 na 30 września otrzymali informację o kapitulacji stolicy. Dowódcztwo rozkazało rozbrajanie w sobotę 30 września, mundury
+                zamieniali na cywilne ubrania lub kupowali od miejscowej ludności w celu uniknięcia wzięcia do niewoli przez Niemców. Motocykl i samochody, na których przybyli popsuli
+                i zostawili.</p>
+                <p>Po pewnym czasie do wsi przybył patrol niemiecki, który był zainteresowany pozostawionymi przez wojsko polskie ciężarówkami. Chwilę później po próbach naprawy
+                i oględzinach Niemcy odjechali. W niedzielę rano, 1 października 1939r. do wsi przyjechało konno kilku żołnierzy niemieckich. Jeden z żołnierzy mówił po polsku i polecił 
+                Sołtysowi wsi, żeby po południu wszyscy mężczyźni nie opuszczali swoich domów oraz kazali uprzątnąć klepiska w stodołach bo we wsi mają kwaterować Niemcy. Sołtys i jego
+                zastępca chodzili od domu do domu przekazując rozkaz od Niemców. Wkrótce do Sołtysa dołączył jeden z żołnierzy niemieckich, zamienił z nim kilka słów i oddalił się 
+                drogą na Wojciechów. Po oddaleniu się od grupy konnej na kilka metrów oddał strzał w kierunku zabudowań Hielodora Nieciengiewicza. Stamtąd odpowiedziały mu inne strzały.
+                Świadkowie twierdzą, że koło dworu w Szczuczkach ktoś rozpalił ognisko i wrzucił do niego znalezione kule i to ich wybuch przyczynił się do tego, że Niemiec oddał strzał.
+                Chwilę po tym z trzech stron wsi zaczęły padać strzały z broni maszynowej i dział, w wyniku czego dwór stanął w płomieniach. Świadkowie zgadzają się w kwestii, że Niemcy
+                strzelali do samych siebie. Czy to była zamierzona prowokacja, czy tylko fatalny w skutkach przypadek nie wiadomo do dziś. Po 15-20 minutach przerwano ogień i do Szczuczek
+                weszło wojsko okrążając wieś ze wszystkich stron.</p>
+                <p>"Po jakimś czasie przyjechał żołnierz na białym koniu, wyjął z kieszeni gwizdek. Na komendę gwizdka Niemcy natychmiast zebrali
+                się koło niego. Wydał rozkaz w języku niemieckim gestykulując rękami i głośno krzycząc. Wsiadł na konia i odjechał. Żołnierze zaczęli łapać wszystkich chłopów, jakich spotkali,
+                nie patrząc czy to nasz ze wsi, czy też człowiek, który tam tędy po prostu przechodził. Rewizji nie robili, tylko łapali każdego kogo zobaczyli. Ze wsi wpadali na podwórka, do 
+                domów. Zdarzało się, że po trzech z domu zabierali - ojca i dwóch synów. Nawet młodych chłopców - 14, 15 letnich. Aresztowani myśleli, że idą do ratowania palącego się dworku, 
+                szli bez protestu" - relacja Heleny Wójcik. Zebranych mężczyzn zaprowadzili do sadu, gdy wszyscy byli zgromadzeni oficer niemiecki zapytał po polsku o broń i amunicję pozostawioną
+                w ciężarówkach, które zostawili żołnierze Wojska Polskiego. Gdy nie usłyszał odpowiedzi po trzykrotnym powtórzeniu pytaniam, zagroził, że zabiją wszystkich a wieś spalą. Okazało się,
+                że w tych ciężarówkach przywieziono zdobytą w potyczce z Niemcami broń. Chłopi kręcąc głowami, twierdzili, że nic nie wiedzą. Wtedy z grupy mężczyzn wyszedł gajowy Maciej Mirosław
+                i powiedział, że broń jest zakopana w lesie. Poprosił chłopów by poszli z nim do lasu ale nikt nie chciał oprócz jego sąsiada - Andrzeja Marka. Z nimi dwoma szło kilku Niemców w tym
+                oficer, który mówił po polsku. Druga grupa Niemców zebrała mężczyzn i udała się w kierunku szkoły.</p>
+                <p> W tym samym czasie, Niemcy zabrali Heliodora Nieciengiewicza i skierowali się
+                w stronę szkoły i rozmawiali z nim po niemiecku. Nagle Niemcy rozkazali mu się odwrócić i iść w stronę płonących zabudowań. Szedł bez słowa po zaoranym własnym polu. Niemcy zdjęli
+                z ramion karabiny, padła komenda "halt", Heliodor stanął, obejrzał się, przeżegnał i padły w jego kierunku dwa strzały, które go zabiły. W tym czasie Niemcy doprowadzali do palących
+                się posiadłości Nieciengiewicza. Tam zatrzymywali ich obok dołu służącego jako schron lub miejsce do przezimowania ziemniaków. Żołnierze niemieccy brali pojedynczo mężczyzn i nad tym
+                dołem do nich strzelali. Zginęło tam około 5 chłopów. Z niewiadomych przyczyn po krótkich czasie hitlerowcy przestali strzelać i zabrali mężczyzn w kierunku szkoły. W tym czasie gajowy
+                wraz ze swoim sąsiadem i żołnierzami niemieckimi odnaleźli broń zakopaną w lesie. Oficer wydał motocykliście rozkaz aby pojechał do wsi i zawiadomił o jej odnalezieniu. Tymczasem 
+                mężczyźni zgromadzeni pod szkołą mieli kłaść się na brzuchu a Niemcy ściągali im buty kopiąc ich przy tym. Szkoła była nowowybudowana i jeszcze w stanie surowym z oknami pozabijanymi
+                deskami. Po oderwaniu kilku desek przez mały otwór wpychano mężczyzn do środka, jeśli ktoś nie chciał lub nie mógł wejśc był kopany i bity kolbami karabinów. Z zeznań świadków wynika,
+                że motocyklista nie zdążył dojechać na czas przed rozpoczęciem egzekucji a inne źródła podają, że żołnierz zdążył ale oficer i tak wydał rozkaz o oddaniu strzałów z dział. Po oddaniu trzech
+                strzałów z dział Niemcy oddali kilka serii z karabinów maszynowych oraz zaczęli strzelać z broni ręcznej do mężczyzn, którzy przeżyli. Po chwili ucichło i Niemcy odjechali. Kolejnego dnia
+                w godzinach rannych do wsi przyjechało kilku Niemców. Szkołę wraz ze szczątkami zabitych i kilka ciał leżących wokół szkoły zlali benzyną i spalili.</p>
+            </p>
+        </div>
+        
+        <div id="wojciechow" class="tabcontent">
+            <h3>Masakra Żydów w Wojciechowie</h3>
+            <button id="btn_wojciechow">Pokaż na mapie</button>
+            <p>Latem 1940r. doszło do masakry Żydów w Wojciechowie. W areszcie na posterunku żandarmerii w Wojciechowie osadzono rodziny żydowskich rzemieślników mieszkających w Starym Gaju i okolicach
+                Wojciechowa. Krawcy, szewcy, handlarze, którzy świadczyli usługi miejscowej ludności aby zarobić na życie a tego Niemcy im zabraniali. W areszcie osadzono łącznie 17 osób. Brak dostępu
+                do wody, jedzenia, powietrza oraz światła przez kilka dni. Wyczerpanym fizycznie żydom w sposób konspiracyjny dostarczano wodę i mleko dla dzieci. Po kilku dniach pod posterunek przybyło
+                samochodem kilku niemieckich żołnierzy, którzy otworzyli kraty i drzwi aresztu. Kazali więźniom wychodzić i uciekać w kierunku przeciwgległego pagórka za szosę. Wyczerpani Żydzi nie mieli
+                sił, wśród nich były także kobiety z małymi dziećmi na rękach. Wszyscy wiedzieli, że czeka ich śmierć. Gdy zaczęli biec Niemcy puścili serię strzałów z karabinów maszynowych. Wszyscy
+                więźniowie zostali zamordowani, jednak dla pewności oprawcy sprawdzali czy wszyscy nie żyją. Jeśli ktoś dawał oznaki życia był dobijany z pistoletu. Inni Żydzi, którzy w tym czasie nie 
+                zostali jeszcze zabici pochowali wszystkie ciała w jednej mogile.
+            </p> 
+        </div>
+        
+        <div id="palikije" class="tabcontent">
+            <h3>Pacyfikacja wsi Palikije II</h3>
+            <button id="btn_palikije">Pokaż na mapie</button>
+            <p>Niemcy okrążyli wieś Palikije II od strony Czajek i Wojciechowa dnia 18.03.1942r. o godz. 4 - tej rano. O godz. 6:00 wkroczyli już do każdego gospodarstwa w celu zabrania majątku chłopskiego
+                i wywozili go samochodami w kierunku Miłocina. Po godzinie kazali wszystkim mieszkańcom opuścić własne domostwa i pójść do tzw. "Dworu". Tam po przesłuchaniu, Niemcy podzielili ich na dwie
+                grupy. Jedni zostali przewiezieni przez Niemców do Lublina na ul. Krochmalną i po dwóch tygodniach mogli zostać wykupieni przez rodzinę. Druga grupa została zamknięta we "Dworze" na 3 godziny,
+                a później wypuszczona. W tym czasie wieś została podpalona przez Niemców. Spaleniu uległo 7 gospodarstw, zginęło 5 mężczyzn, którzy nie zostali wypędzeni, ponieważ się ukryli. Strażacy z Ochotniczej
+                Straży Pożarnej w Wojciechowie zostali zawróceni przez niemieckich żołnierzy.
+            </p>
+        </div>
+
+        <div id="wojciechow_kol" class="tabcontent">
+            <h3>Mord w Wojciechowie Kolonia 5</h3>
+            <button id="btn_wojciechow_kol">Pokaż na mapie</button>
+            <p>30 stycznia 1943r., do Wojciechowa Kolonii 5 od strony Nałęczowa przybyli saniami uzbrojeni Niemcy. Hitlerowcy ostrzeliwując teren, kierowali się w głąb wsi, szli po obu stronach rzeki.
+                W domach wypytywali o miejsce zamieszkania Józefa Litwińskiego, znanego i bogatego gospodarza. Pytali o to jego sąsiada - pana Lipca, słysząc to syn - Kazimierz Lipiec natychmiast
+                niepostrzeżenie uciekł z domu i jeszcze przez przybyciem Niemców zdążył ostrzec mieszkańców domu Józefa Litwińskiego, by uciekali bo idą po nich Niemcy. W tym czasie w domu byli synowie
+                Józefa, córka, dziadek, sąsiad oraz niepełnosprawna kuzynka. Gdy usłyszeli hasło "uciekajcie" młodzi mężczyźni wybiegli na podwórze i rzucili się do ucieczki. Za nimi leciały kule z niemieckich
+                karabinów maszynowych. Dwóch z czterech mężczyzn uszło z życiem. W tym samym czasie inni żołnierze niemieccy otoczyli dom Józefa Litwińskiego i wtargnęli do środka w poszukiwaniu "bandytów"
+                czyli mieszkańców tego domu. Zastali trzy osoby - córkę, dziadka i kuzynkę. Nie osiągneli swojego celu czyli zatrzymania głównego "bandyty" - Józefa Litwińskiego. Tego dnia Józef od rana załatwiał
+                sprawy w Wojciechowie. Idąc do domu dowiedział sie o całej tragedii i zawrócił. Niemcy, wszystkie trzy zatrzymane osoby wyprowadzili za stodołę. Pod groźbą przugonili rodzinę sąsiada i na ich
+                przerażonych oczach dokonali egzekucji członków rodziny Litwińskich. Następnie Niemcy podpalili dom a przypędzonych sąsiadów zmusili do znoszenia ciał wszystkich zabitych oraz do wrzucenia ich
+                w płonący dom. Zgliszcza tliły się kilka dni wraz ze szczątkami pięciu zamordowanych osób. Spalone szczątki zostały pochowane kilka dni później nocą, po cichu na tutejszym cmentarzu. Niemcy jeszcze
+                długo "odwiedzali" gospodarstwo Litwińskich i jego sąsiadów w poszukiwaniu Józefa i jego syna, którzy ukrywali się u różnych ludzi. Na szczęście przeżyli ten koszmar i doczekali końca swoich dni
+                w wolnej ojczyźnie.
+            </p>
+        </div>
+
+        <div id="tygrys" class="tabcontent">
+            <h3>Zabójstwo "Tygrysa"</h3>
+            <button id="btn_tygrys">Pokaż na mapie</button>
+            <p>20 sierpnia 1943r. pogodny i ciepły niedzielny poranek. Żandarmowie SS z posterunku w Wojciechowie zjawiają się u pana Antoniego Goliszka - właściciela młyna ośmioosobową grupą. Bywali tu częstymi
+                nieproszonymi "gośćmi". Młyn a zarazem dom mieszkalny znajdował sie przy drodze Wojciechów - Ignaców. Zabudowania te od strony drogi były otoczone wysokimi drzewami i krzewami. Niemcy na podwórzu
+                gospodarza zachowywali się głośno, nerwowo rozglądali się na wszystkie strony, węsząc czy gdzieś nie czai sie jakieś niebezpieczeństwo. Naocznym świadkiem wydarzeń był Stanisław Czępiński 16 - letni
+                chłopak z Wojciechowa, który wtedy pasł krowy na swoim polu położonym na przeciwko młyna. Widząc grupę esesmanów, ze strachu przykucnął pod miedzą ale dobrze widział niecodzienny obiekt zainteresowania.
+                Słyszał głośne rozmowy, okrzyki i jakieś pytania do gospodarza. Nagle zauważył nadjeżdżającego rowerem młodego człowieka. Jechał z przeciwnej strony do Wojciechowa. Rowerzysta widząc pastucha zatrzymał się
+                i nerwowo zapytał czy nie widział Niemców. Przerażony Stanisał odpowiedział szybko, że Niemcy są we młynie i z ganku na pewno go dostrzegą. Mówiąc to zauważył, że ten miał za pazuchą miał coś co było 
+                podobne do broni. Rowerzysta wysłuchał informacji ale nie zastosował sie do ostrzeżeń. Ruszył szybko w stronę Wojciechowa, drogą obok młyna. Żandarmi natychmiast dostrzegli jadącego i dali sygnał by się 
+                zatrzymał, lecz ten nie zważał na krzyki i strzały, jechał dalej a potem biegł. Kule trafiły młodzieńca i padł ciężko ranny. Ostatnim wysiłkiem zdążył odbezpieczyć granat, który wybuchł tuż przed przybyciem
+                Niemców. Zginął na miejscu. Tym bohaterem był 20 - letni Stanisław Zięba - partyzant ps. "Tygrys", mieszkaniec sąsiedniej wsi Podole. Jechał wtedy z ważnym meldunkiem do swojego sztabu partyzanckiego w Wojciechowie.
+                Nie dojechał ale nie oddał też w ręce wroga siebie i meldunku. Na miejscu śmierci partyzanta został położony kamień upamiętniający to tragiczne wydarzenie.
+            </p>
+        </div>
+
+        <div id="posterunek" class="tabcontent">
+            <h3>Likwidacja posterunku żandarmerii niemieckiej</h3>
+            <button id="btn_posterunek">Pokaż na mapie</button>
+            <p>Po zabójstwie "Tygrysa" Niemcy spodziewali się odwetu. By zabezpieczyć się, wokół posterunku wycięli wszystkie krzewy i drzewa, by była pełna, dobra widoczność. Drzwi i okna zabarykadowali workami z piaskiem,
+                na warcie postawili chłopów - czuli się bezpieczni. Dowództwo Armii Krajowej w odwet za poległego "Tygrysa" natychmiast podjęło decyzję o likwidacji posterunku żandarmerii w Wojciechowie.
+                Grupą szturmową dowodził Stanisław Rolla ps. "Maks" mieszkaniec Stasina. Akcja trwała około 30 minut. Wszyscy Niemcy zostali zabici, a jako ostatni zginął komendant posterunku Pudel, który
+                był postrachem dla Wojciechowiaków. Z Polaków w akcji nie zginął nikt, ale było kilka osób rannych. Za ten wyczyn Wojciechów nie doznał przykrych konsekwencji ze strony Niemców, a to dzięki uwczesnemu
+                wójtowi p. Zygmuntowiczowi, którzy rzekomo będą na usługach Niemców przekonał ich, że napadu dokonali partyzanci radzieccy. Fakt ten upamiętnia tablica z odpowiednim napisem umieszczonym na ścianie
+                frontowej budynku Urzędu Gminy.
+            </p>
+        </div>
+
+        <div id="rekwizycja" class="tabcontent">
+            <h3>Karna rekwizycja w Wojciechowie</h3>
+            <button id="btn_rekwizycja">Pokaż na mapie</button>
+            <p>9 czerwca 1944r. w godzinach rannych do Wojiechowa przyjechali samochodami Niemcy. Obstawili całą wieś. Niemcy, którzy weszli do wsi podzielili się na dwie grupy. W każdej grupie był albo Sołtys
+                lub jego pomocnik. Chodzili od domu do domu po obydwu stronach wsi zabierając wszystkich mężczyzn - wymagali by każdy z nich miał dowód osobisty. Grupami, zaprowadzili ich na plac wokół kościoła - 
+                powszechnie się mówiło, że jest to cmentarz kościelny. Nikt nie mógł przewidzieć jakie będą ich dalsze losy. Z pośród wszystkich zgromadzonych mężczyzn wybrali tylko trzech tj. Stachyra Piotr,
+                Stachyra Paweł i Ludwik Rolla i wywieźli ich do Bełżyc. Tam w zbiorowej egzekucji zginęli Piotr Stachyra i Ludwik Rolla. Paweł Stachyra mocno przybity wrócił do domu. Po kilka miesiącach zmarł.
+                Pozostałych mężczyzn, po paru godzinach wypuścili wolno. Jednocześnie Niemcy zabierali z obór chłopskich krowy, świnie na samochody i wywozili w kierunku Miłocina. Ile tych zwierząt wówczas zabrano,
+                trudno jest dzisiaj ustalić. Dużo świadków tamtych zdarzeń nie żyje, a obecnie żyjący zasłaniają się niepamięcią.
+            </p>
+        </div>
+
+
+        <div id="stopka">
+            <hr>
+            <p style="text-align: center">
+                &copy; Karol Trojanowski
+            </p>
+        </div>
+
+    </div>
+    
+<script src="script/skrypt1.js" defer></script>
+
+</body>
+
+</html>
